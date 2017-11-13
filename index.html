@@ -74,7 +74,19 @@
 				}
 				if(hasWon(cell)){
 					document.querySelector("span[id=Message]").innerText = hasWon(cell) + " has won the game!";
+				}else if(!isEmpty()){
+					document.querySelector("span[id=Message]").innerText = "The game ended with DRAW!";
 				}
+			}
+
+			function isEmpty(){
+				let empty = false;
+				cell.forEach(c => {
+					if(c.innerText == "") {
+						empty = true;
+					}
+				})
+				return empty;
 			}
 
 			function hasWon(cell){

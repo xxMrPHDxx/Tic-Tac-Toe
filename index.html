@@ -6,9 +6,8 @@
 			let data = [];
 			window.onload = function(){
 				let req = new XMLHttpRequest();
-				req.onreadystatechange = function(){
-					if(req.readyState==3)
-						data.push({request:req,respond:req.respond});
+				req.onloadend = function(){
+					data.push({request:req,respond:req.respond});
 				}
 				req.open("GET","index.html");
 				req.send();

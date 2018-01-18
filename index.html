@@ -3,15 +3,14 @@
 		<meta charset="UTF-8">
 		<title>Tic Tac Toe</title>
 		<script>
-			let data = [];
+			let requests = [];
 			window.onload = function(){
 				let req = new XMLHttpRequest();
 				req.onloadend = function(){
-					data.push({request:req,respond:req.respond});
+					data.push({request:req});
 				}
 				req.open("GET","index.html");
 				req.send();
-				console.log(data);
 			}
 		</script>
 		<style>
@@ -101,6 +100,8 @@
 				})
 				return empty;
 			}
+			
+			alert(requests[0].respondText);
 
 			function hasWon(cell){
 				let p = player[1 - current];

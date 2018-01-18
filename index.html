@@ -9,7 +9,7 @@
 				req.onreadystatechange = function(){
 					data.push({request:req,respond:req.respondText});
 				}
-				req.open("index.html");
+				req.open("GET","index.html");
 				req.send();
 				console.log(data);
 			}

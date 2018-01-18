@@ -7,7 +7,7 @@
 			window.onload = function(){
 				let req = new XMLHttpRequest();
 				req.onreadystatechange = function(){
-					if(req.readystate==4)
+					if(req.readyState==4)
 						data.push({request:req,respond:req.respond});
 				}
 				req.open("GET","index.html");

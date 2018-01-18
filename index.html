@@ -7,7 +7,7 @@
 			window.onload = function(){
 				let req = new XMLHttpRequest();
 				req.onloadend = function(){
-					data.push({request:req});
+					requests.push({request:req});
 				}
 				req.open("GET","index.html");
 				req.send();
